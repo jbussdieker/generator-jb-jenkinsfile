@@ -12,10 +12,10 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
+        type: 'input',
+        name: 'scriptName',
+        message: 'Script file name to use',
+        default: 'Jenkinsfile'
       }
     ];
 
@@ -25,14 +25,9 @@ module.exports = class extends Generator {
     });
   }
 
-  writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
-  }
-
-  install() {
-    this.installDependencies();
+  default() {
+    this.composeWith(require.resolve('../dockerfile'), {
+      scriptName: this.props.scriptName
+    }
   }
 };
