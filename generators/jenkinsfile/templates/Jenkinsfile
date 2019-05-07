@@ -1,0 +1,10 @@
+#!groovy
+node {
+  stage('clone') {
+    checkout scm
+  }
+
+  stage('build') {
+    sh "echo TODO: setup build command"
+  }
+}

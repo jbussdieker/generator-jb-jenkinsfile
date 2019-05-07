@@ -1,13 +1,14 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 
 module.exports = class extends Generator {
   writing() {
-    this.fs.copy(
-      this.templatePath('Jenkinsfile'),
-      this.destinationPath(this.options.scriptName)
+    this.fs.copyTpl(
+      this.options.template || this.templatePath('Jenkinsfile'),
+      this.destinationPath(this.options.scriptName),
+      {
+        ...this.options
+      }
     );
   }
 };

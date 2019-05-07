@@ -26,8 +26,8 @@ module.exports = class extends Generator {
   }
 
   default() {
-    this.composeWith(require.resolve('../dockerfile'), {
+    this.composeWith(require.resolve('../jenkinsfile'), {
       scriptName: this.props.scriptName
-    }
+    });
   }
 };

@@ -7,10 +7,10 @@ describe('generator-jb-jenkinsfile:jenkinsfile', () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, '../generators/jenkinsfile'))
-      .withPrompts({ someAnswer: true });
+      .withOptions({ scriptName: 'Bar' });
   });
 
   it('creates files', () => {
-    assert.file(['dummyfile.txt']);
+    assert.file(['Bar']);
   });
 });
