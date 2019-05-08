@@ -1,6 +1,6 @@
 {
   "name": "generator-jb-jenkinsfile",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Jenkinsfile generator",
   "homepage": "https://github.com/jbussdieker/generator-jb-jenkinsfile#readme",
   "author": {
